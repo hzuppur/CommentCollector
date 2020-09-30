@@ -7,6 +7,6 @@ class Command(BaseCommand):
   help = 'Adds all delfi front page articles to the database'
 
   def handle(self, *args, **options):
-    #db_util.remove_old_articles()
+    db_util.remove_old_articles()
     db_util.add_articles_to_table(False)
     self.stdout.write(self.style.SUCCESS('Successfully added comments to table'))

@@ -14,7 +14,8 @@ class Command(BaseCommand):
 
   def handle(self, *args, **options):
     start = time.time()
-    db_util.add_articles_to_table(with_replys=False)
+    #db_util.add_articles_to_table(with_replys=False)
     #SavedComment.objects.all().delete()
+
     delta = round(time.time() - start, 2)
     self.stdout.write(self.style.SUCCESS(f'Successfully yeeted, time elapsed: {delta}s'))

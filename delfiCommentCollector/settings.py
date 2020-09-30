@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'delfiCommentCollector.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-if os.environ['LOCAL']:
+if os.environ['LOCAL'] == True:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
