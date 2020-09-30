@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Saved comments</title>
+</head>
+<body>
+<h1>Saved comment count: {{ comments|length }}</h1>
+{% if comments %}
+    <ul>
+        {% for comment in comments %}
+            <li>is removed: {{ comment.removed }} &nbsp- {{ comment.content }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+</body>
+</html>

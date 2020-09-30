@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{{ article.name }}
+{% if comments %}
+    <ul>
+        {% for comment in comments %}
+            <li>{{ comment.subject }} - {{ comment.content }}</li>
+            {% for reply in comment.commentreply_set.all %}
+                <ul>
+                    <li>{{ reply.subject }} - {{ reply.content }}</li>
+                </ul>
+            {% endfor %}
+        {% endfor %}
+    </ul>
+{% endif %}
+</body>
+</html>
