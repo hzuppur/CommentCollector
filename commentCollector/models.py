@@ -54,7 +54,7 @@ class SavedComment(models.Model):
   subject = models.CharField(max_length=500)
 
   class Meta:
-    unique_together = ["id"]
+    unique_together = ["content"]
 
   def __str__(self):
     return self.content
