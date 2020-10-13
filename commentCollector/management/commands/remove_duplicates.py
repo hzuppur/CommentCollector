@@ -10,5 +10,5 @@ class Command(BaseCommand):
   def handle(self, *args, **options):
       # assuming which duplicate is removed doesn't matter...
       for row in SavedComment.objects.all().reverse():
-          if SavedComment.objects.filter(id=row.id).count() > 1:
+          if SavedComment.objects.filter(content=row.content).count() > 1:
               row.delete()
